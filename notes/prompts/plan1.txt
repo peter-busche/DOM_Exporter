@@ -1,0 +1,16 @@
+This is a new project I want to start working on.
+I have an idea in mind that I think is possible, but I am not sure about the right way to implement it.
+Here is the problem I am trying to solve.
+"""
+I am a backend developer that doesn't code frontend very often. I have the code repo for a website frontend, and I can see the frontend code
+working on it's own public url online.
+I've been given a task to change the color of a button on the frontend website code, but I have no idea where that get's handled in the code repo.
+I wish I had a tool that could easily copy/paste the element pane from the website, and save it in a file on my computer so that I could use it 
+to help me figure out where to make a code change to change the color of the button.
+"""
+
+Here is the solution I had in mind:
+I want to create a google extension that has a button called 'export'. When I click that export button, it will copy/paste the 
+element's pane to a file on my computer.
+
+Can you help me plan out this project?
