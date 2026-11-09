@@ -4,16 +4,42 @@
     <meta charset="utf-8">
     <title>DOM Export</title>
     <style>
-      body { font-family: system-ui, sans-serif; width: 260px; margin: 12px; }
-      button { width: 100%; padding: 8px; font-size: 14px; cursor: pointer; }
-      #status { margin-top: 8px; font-size: 12px; color: #444; word-break: break-word; }
-      #hint { margin: 10px 0 0; font-size: 12px; color: #666; }
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui, sans-serif; width: 300px; margin: 12px; font-size: 13px; }
+      button { font: inherit; cursor: pointer; }
+      #export { width: 100%; padding: 8px; font-size: 14px; }
+      #status { margin-top: 8px; font-size: 12px; opacity: 0.85; word-break: break-word; }
+      .section { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(128, 128, 128, 0.35); }
+      .row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+      .caption { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; }
+      #location { font-weight: 600; word-break: break-all; margin-top: 2px; }
+      #warning { margin-top: 4px; font-size: 12px; color: #b34708; }
+      #warning[hidden] { display: none; }
+      @media (prefers-color-scheme: dark) { #warning { color: #ff9a5c; } }
+      #settings { border: none; background: none; padding: 0; color: inherit; text-decoration: underline; font-size: 12px; white-space: nowrap; }
+      label { display: block; margin-top: 10px; font-size: 12px; }
+      #label { font: inherit; width: 100%; box-sizing: border-box; margin-top: 3px; padding: 5px 7px; }
+      #hint { margin: 12px 0 0; font-size: 12px; opacity: 0.7; }
     </style>
   </head>
   <body>
     <button id="export">Export</button>
     <div id="status"></div>
+
+    <div class="section">
+      <div class="row">
+        <span class="caption">Saves to</span>
+        <button id="settings">Change folder…</button>
+      </div>
+      <div id="location">…</div>
+      <div id="warning" hidden></div>
+      <label>Subfolder (optional)
+        <input type="text" id="label" placeholder="e.g. nav-color-change" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
     <p id="hint">To record one element, right-click it on the page and choose "DOM Export: record this element".</p>
+    <script src="filestore.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

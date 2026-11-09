@@ -56,17 +56,22 @@ async function recordSelection(tabId, frameId) {
   selection.htmlFile = `${base}.html`;
   if (summary.selection) summary.selection.selectionFile = `${base}.selection.json`;
 
-  await download(JSON.stringify(selection, null, 2), `${base}.selection.json`, "application/json");
-  await download(JSON.stringify(summary, null, 2), `${base}.json`, "application/json");
-  await download(html, `${base}.html`, "text/html");
+  const saved = await saveFiles([
+    { name: `${base}.selection.json`, text: JSON.stringify(selection, null, 2), mime: "application/json" },
+    { name: `${base}.json`, text: JSON.stringify(summary, null, 2), mime: "application/json" },
+    { name: `${base}.html`, text: html, mime: "text/html" },
+  ]);
 
-  await notify(tabId, frameId, `Recorded ${selection.path}. Saved ${base}.selection.json, .json and .html to Downloads.`, false);
-  return result;
+  await notify(tabId, frameId, `Recorded ${selection.path}. ${saved.message}`, false);
+  return { ...result, saved: { ok: saved.saved, reason: saved.reason || null, message: saved.message } };
 }
 
-// --- Downloads ------------------------------------------------------------------
-// A service worker cannot create blob: URLs, and data: URLs stop working around
-// 2 MB, so an offscreen document turns the text into a blob: URL.
+// --- Saving ---------------------------------------------------------------------
+// Files are saved by an offscreen document. It writes them into the folder the
+// user chose in settings; when it cannot (no folder chosen, access lapsed, or a
+// write error) it hands back blob: URLs and the files go to Downloads instead.
+// The offscreen document is needed either way: a service worker cannot create
+// blob: URLs, and data: URLs stop working around 2 MB.
 
 let offscreenReady = null;
 
@@ -84,9 +89,17 @@ function ensureOffscreen() {
   return offscreenReady;
 }
 
-async function download(text, filename, mime) {
+// files: [{ name, text, mime }]. Resolves to the offscreen document's result,
+// whose `message` says where the files went.
+async function saveFiles(files) {
   await ensureOffscreen();
-  const reply = await chrome.runtime.sendMessage({ target: "dom-export-offscreen", type: "make-blob-url", text, mime });
-  if (!reply || !reply.url) throw new Error("Could not prepare the file for download.");
-  return chrome.downloads.download({ url: reply.url, filename, saveAs: false });
+  const result = await chrome.runtime.sendMessage({ target: "dom-export-offscreen", type: "save-files", files });
+  if (!result) throw new Error("Could not save the files.");
+  if (!result.saved) {
+    if (!result.fallback) throw new Error("Could not prepare the files for download.");
+    for (const file of result.fallback) {
+      await chrome.downloads.download({ url: file.url, filename: file.filename, saveAs: false });
+    }
+  }
+  return result;
 }

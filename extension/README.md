@@ -5,6 +5,8 @@ Exports what the browser rendered for a page, so you can work out where a UI ele
 - **Record one element:** right-click anything on the page and choose **DOM Export: record this element**. You get a small file describing exactly that element and the CSS rules that style it, plus a full page export with the element flagged.
 - **Export the whole page:** click the extension icon, then **Export**.
 
+Files are saved to a folder you choose, or to your Downloads folder if you have not chosen one.
+
 ## Install (load unpacked)
 
 1. Open `chrome://extensions`.
@@ -16,14 +18,50 @@ After installing, or after changing the extension's files and clicking the reloa
 
 Requires Chrome 116 or later.
 
+## Choose where files are saved
+
+By default, files go to your browser's Downloads folder. To send them somewhere else, such as an `exports/` folder inside the repo you are working on:
+
+1. Click the extension icon, then **Change folder…**. This opens the settings page. (You can also reach it from the extension's **Details** page under **Extension options**.)
+2. Click **Choose folder…**, pick the folder, and approve Chrome's prompt to let the extension edit files there.
+3. The settings page writes and removes a small test file to confirm the folder works, then shows **Access allowed**.
+
+From then on, both the Export button and the right-click option write straight into that folder. Change it at any time from the same page, or click **Use Downloads instead** to go back.
+
+### Subfolders: grouping exports per task
+
+The **Subfolder** field, in both the popup and the settings page, puts files into a subfolder of the save location and creates it if needed. Type `nav-color-change` before working on one change and `footer-links` before the next, and each task's exports stay together. Use `/` for nested folders, such as `homepage/nav`. Letters, digits, spaces, dots, dashes and underscores are kept; other characters become dashes.
+
+The subfolder also applies when saving to Downloads, for example `Downloads/nav-color-change/`.
+
+### When folder access lapses
+
+Chrome's approval for a folder can lapse, for example after the browser restarts. When that happens nothing is lost:
+
+- The files are saved to Downloads (in the same subfolder name) instead.
+- The message shown after the export says so and why.
+- The popup shows a warning under **Saves to**.
+
+To fix it, open settings and click **Re-allow access**. If Chrome's prompt offers **Allow on every visit**, choosing it should keep the approval from lapsing.
+
+The same fallback applies if the folder has been deleted or renamed, or a write fails for any other reason.
+
+### Folders Chrome will not allow
+
+Chrome blocks a few protected locations for every site and extension, such as your home folder itself and system folders. Pick a project folder or a subfolder instead.
+
 ## Record one element (right-click)
 
-1. Right-click the thing you want to change: a button, a heading, an image.
-2. Choose **DOM Export: record this element**.
-3. The element flashes orange, a message appears in the bottom-right corner, and three files download with one shared name:
+1. Right-click the thing you want to change: a button, a heading, an image. As soon as you press the button, the element that would be recorded is highlighted in blue, with a label giving its tag, id or classes, and size (for example `a.card.link-card   275 × 145`).
+2. Check the highlight. If it covers what you meant, choose **DOM Export: record this element** from the menu. If it covers something too small or too large, press Esc and right-click a different spot: the padding of a card selects the card, while its text selects the heading or paragraph inside it.
+3. The element flashes orange, a message in the bottom-right corner says where the files went, and three files are saved with one shared name:
    - `dom-export-<host>-<timestamp>.selection.json`: the element you clicked. Start here.
    - `dom-export-<host>-<timestamp>.json`: the full page export taken at the same instant, with the element marked `"selected": true`.
    - `dom-export-<host>-<timestamp>.html`: the raw markup.
+
+The blue highlight stays while the menu is open and clears when you move the mouse, click, scroll or press a key afterwards. It is drawn on top of the page, never by changing the element, and is removed before anything is captured, so it does not appear in the exported files.
+
+On macOS the menu opens the instant the button goes down, so the highlight appears together with the menu. On Windows and Linux, where the menu opens when you release, you can hold the button and move the mouse: the highlight follows, and the element under the pointer when you release is the one recorded.
 
 ### What the selection file contains
 
@@ -48,7 +86,7 @@ Right-click the link and open the `.selection.json`. `matchedCssRules` shows `.n
 
 1. Open the page and let it finish loading.
 2. Click the **DOM Export** icon, then **Export**.
-3. Two files download: `dom-export-<host>-<timestamp>.json` and `.html`.
+3. Two files are saved: `dom-export-<host>-<timestamp>.json` and `.html`. The popup says where they went.
 
 ### What the full export JSON contains
 
@@ -88,7 +126,8 @@ Computed values are resolved: `var(--bg)` shows as an `rgb()` color. The stylesh
 | --- | --- |
 | Runs on all sites (content script) | Chrome does not tell an extension which element was right-clicked, so a small script on each page remembers the element under the last right-click. It does nothing else until you pick the menu item, and sends nothing anywhere. |
 | `contextMenus` | Adds the right-click menu item. |
-| `downloads`, `offscreen` | Saves the files. The offscreen page exists only to prepare large files for download. |
+| `downloads`, `offscreen` | Saves the files. The offscreen page is a hidden helper that writes files to your chosen folder, or prepares them for download, on behalf of the right-click option. |
+| Folder access (asked when you choose a folder) | Lets the extension write export files into the one folder you picked. It is not requested until you choose a folder, and covers only that folder. |
 | `activeTab`, `scripting` | Lets the popup's Export button read the current tab. |
 
 To limit the extension to particular sites, replace `<all_urls>` in `manifest.json` with patterns such as `https://peter-busche.com/*`.
@@ -105,6 +144,7 @@ To limit the extension to particular sites, replace `<all_urls>` in `manifest.js
 - Closed shadow roots resolve to their host element. Styles declared inside shadow roots are not captured.
 - A stylesheet served from another origin without CORS headers cannot be read or rule-matched; it is listed as unreadable with its URL.
 - Chrome's own pages (`chrome://`, the Web Store) cannot be exported.
+- Choosing a save folder needs a Chromium-based browser (Chrome, Edge, Brave). Elsewhere, files go to Downloads.
 - The tree stops at 20,000 elements, stylesheet text at 3 MB and matched rules at 300; `counts.treeTruncated`, `stylesheets[].truncated` and `rulesCapped` flag this.
 
 ## Files
@@ -115,5 +155,7 @@ To limit the extension to particular sites, replace `<all_urls>` in `manifest.js
 | `capture.js` | Capture library: `capturePage()` for the full export, `describeSelection()` for one element. |
 | `content.js` | Runs in each page: remembers the right-clicked element, shows the outline and message. |
 | `background.js` | Service worker: owns the menu item and saves the files. |
-| `offscreen.html`, `offscreen.js` | Helper page that prepares large files for download. |
-| `popup.html`, `popup.js` | The Export button. |
+| `filestore.js` | Save-location logic: remembers the chosen folder and subfolder, writes files, reports when to fall back to Downloads. |
+| `settings.html`, `settings.js` | Settings page: choose the folder, re-allow access, set the subfolder. |
+| `offscreen.html`, `offscreen.js` | Hidden helper page that saves files for the right-click option. |
+| `popup.html`, `popup.js` | The Export button, the current save location and the subfolder field. |

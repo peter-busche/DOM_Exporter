@@ -1,15 +1,45 @@
-// The Export button: full page export of the active tab. capturePage lives in
-// capture.js, which is injected into the page before it is called.
-
-function download(content, filename, mime) {
-  const url = URL.createObjectURL(new Blob([content], { type: mime }));
-  return chrome.downloads.download({ url, filename, saveAs: false }).finally(() => {
-    setTimeout(() => URL.revokeObjectURL(url), 60000);
-  });
-}
+// The popup: full page export of the active tab, plus the save-location
+// summary and subfolder field. capturePage lives in capture.js, which is
+// injected into the page before it is called. DXStore lives in filestore.js.
 
 const button = document.getElementById("export");
 const status = document.getElementById("status");
+const locationEl = document.getElementById("location");
+const warningEl = document.getElementById("warning");
+const labelInput = document.getElementById("label");
+const settingsButton = document.getElementById("settings");
+
+async function refreshLocation() {
+  const info = await DXStore.describe();
+  const lapsed = info.mode === "folder" && info.permission !== "granted";
+  // Show where files will really go right now.
+  locationEl.textContent = lapsed ? "Downloads" + (info.label ? "/" + info.label : "") : info.display;
+  warningEl.hidden = !lapsed;
+  warningEl.textContent = lapsed
+    ? `Chrome needs you to re-approve the folder "${info.folderName}". Click "Change folder…" and then "Re-allow access".`
+    : "";
+  return info;
+}
+
+settingsButton.addEventListener("click", () => chrome.runtime.openOptionsPage());
+
+labelInput.addEventListener("input", async () => {
+  await DXStore.setLabel(labelInput.value);
+  await refreshLocation();
+});
+
+// Saves to the chosen folder, or to Downloads when that is not possible.
+async function saveFiles(files) {
+  const result = await DXStore.writeFiles(files);
+  if (!result.saved) {
+    for (const file of files) {
+      const url = URL.createObjectURL(new Blob([file.text], { type: file.mime }));
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      await chrome.downloads.download({ url, filename: DXStore.downloadsPath(result, file.name), saveAs: false });
+    }
+  }
+  return DXStore.resultText(result, files.length);
+}
 
 button.addEventListener("click", async () => {
   button.disabled = true;
@@ -39,19 +69,27 @@ button.addEventListener("click", async () => {
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
     const base = `dom-export-${host}-${stamp}`;
 
-    await download(JSON.stringify(summary, null, 2), `${base}.json`, "application/json");
-    await download(html, `${base}.html`, "text/html");
+    const where = await saveFiles([
+      { name: `${base}.json`, text: JSON.stringify(summary, null, 2), mime: "application/json" },
+      { name: `${base}.html`, text: html, mime: "text/html" },
+    ]);
 
     const c = summary.counts;
     const warnings = [];
     if (c.treeTruncated) warnings.push("tree truncated");
     if (c.stylesheetsUnreadable) warnings.push(`${c.stylesheetsUnreadable} stylesheet(s) unreadable`);
     status.textContent =
-      `Saved ${base}.json and .html: ${c.elements} elements, ${c.stylesheets} stylesheet(s), ${c.images} image(s).` +
+      `${where} ${base}: ${c.elements} elements, ${c.stylesheets} stylesheet(s), ${c.images} image(s).` +
       (warnings.length ? ` Warning: ${warnings.join(", ")}.` : "");
   } catch (err) {
     status.textContent = `Error: ${err.message}`;
   } finally {
     button.disabled = false;
+    refreshLocation().catch(() => {});
   }
 });
+
+(async () => {
+  const info = await refreshLocation();
+  labelInput.value = info.label;
+})().catch(err => { locationEl.textContent = "Downloads"; console.error(err); });

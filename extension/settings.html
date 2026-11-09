@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM Export settings</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; line-height: 1.5; }
+      h1 { font-size: 22px; margin: 0 0 4px; }
+      h2 { font-size: 16px; margin: 28px 0 8px; }
+      p { margin: 8px 0; }
+      .muted { opacity: 0.75; font-size: 14px; }
+      .card { border: 1px solid rgba(128, 128, 128, 0.4); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+      .location { font-size: 18px; font-weight: 600; word-break: break-all; }
+      .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+      .badge.ok { background: rgba(11, 110, 79, 0.18); color: #0b6e4f; }
+      .badge.warn { background: rgba(232, 89, 12, 0.18); color: #b34708; }
+      @media (prefers-color-scheme: dark) { .badge.ok { color: #4fc79a; } .badge.warn { color: #ff9a5c; } }
+      button { font: inherit; padding: 7px 14px; margin: 6px 8px 0 0; cursor: pointer; border-radius: 6px; border: 1px solid rgba(128, 128, 128, 0.6); background: transparent; color: inherit; }
+      button.primary { background: #0b6e4f; border-color: #0b6e4f; color: #fff; }
+      button[hidden] { display: none; }
+      input[type="text"] { font: inherit; width: 100%; box-sizing: border-box; padding: 7px 10px; border-radius: 6px; border: 1px solid rgba(128, 128, 128, 0.6); background: transparent; color: inherit; }
+      #message { min-height: 1.5em; font-size: 14px; }
+      #message.error { color: #b3261e; }
+      code { font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Export settings</h1>
+    <p class="muted">Choose where exported files are saved. This applies to both the Export button and the right-click "record this element" option.</p>
+
+    <h2>Save location</h2>
+    <div class="card">
+      <div><span class="location" id="location">…</span><span class="badge" id="badge" hidden></span></div>
+      <p class="muted" id="detail"></p>
+      <button class="primary" id="choose">Choose folder…</button>
+      <button id="allow" hidden>Re-allow access</button>
+      <button id="clear" hidden>Use Downloads instead</button>
+      <p id="message"></p>
+    </div>
+
+    <h2>Subfolder (optional)</h2>
+    <div class="card">
+      <input type="text" id="label" placeholder="e.g. nav-color-change" autocomplete="off" spellcheck="false">
+      <p class="muted">Files go into this subfolder of the save location; it is created if missing. Use <code>/</code> for nested folders, such as <code>homepage/nav</code>. Change it per task to keep exports grouped. You can also edit it in the extension popup.</p>
+    </div>
+
+    <h2>How folder access works</h2>
+    <p class="muted">Chrome asks you to approve access to the folder you choose. That approval can lapse, for example after Chrome restarts. When it has lapsed, exports are saved to your Downloads folder instead and the extension tells you; come back here and click <b>Re-allow access</b>. If Chrome offers <b>Allow on every visit</b>, choosing it should stop the approval from lapsing.</p>
+    <p class="muted">Chrome does not let any site or extension pick a few protected locations, such as your home folder itself. Pick a project folder or a subfolder instead.</p>
+
+    <script src="filestore.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

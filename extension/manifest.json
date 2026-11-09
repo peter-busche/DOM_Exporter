@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
   "name": "DOM Export",
-  "version": "0.3.0",
-  "description": "Export a page's rendered element tree, computed styles and stylesheets, or right-click one element to record exactly where it is.",
+  "version": "0.5.0",
+  "description": "Export a page's rendered elements, styles and stylesheets, or right-click one element to record it. Saves to a folder you choose.",
   "minimum_chrome_version": "116",
   "permissions": ["activeTab", "scripting", "downloads", "contextMenus", "offscreen"],
   "background": {
     "service_worker": "background.js"
   },
+  "options_page": "settings.html",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
