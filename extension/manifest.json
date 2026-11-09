@@ -1,9 +1,21 @@
 {
   "manifest_version": 3,
   "name": "DOM Export",
-  "version": "0.2.0",
-  "description": "Export the current page's rendered element tree, computed styles and stylesheets to local files.",
-  "permissions": ["activeTab", "scripting", "downloads"],
+  "version": "0.3.0",
+  "description": "Export a page's rendered element tree, computed styles and stylesheets, or right-click one element to record exactly where it is.",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "downloads", "contextMenus", "offscreen"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["capture.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_title": "DOM Export"

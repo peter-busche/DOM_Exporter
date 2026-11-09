@@ -1,0 +1,240 @@
+{
+  "formatVersion": 3,
+  "url": "https://dev.peter-busche.com/",
+  "title": "Peter Busche",
+  "capturedAt": "2026-11-09T00:27:22.797Z",
+  "viewport": {
+    "width": 1512,
+    "height": 743,
+    "devicePixelRatio": 2
+  },
+  "colorScheme": "light",
+  "kind": "selection",
+  "howToRead": [
+    "This file describes the one element the user right-clicked. path is its selector path; treePath lists the child indexes to follow from tree (the <html> node) through children[] in the full export named by fullExportFile, where the same node carries selected: true.",
+    "element.computedStyles are the final resolved values. matchedCssRules are the stylesheet rules whose selector matches the element, in stylesheet order (for equal specificity, later rules win). Entries with state apply only in that state (e.g. hover). Entries with active: false sit inside a media query or stylesheet that did not apply during capture (e.g. dark mode).",
+    "inheritedCssRules are rules on ancestors that set inherited properties such as font-family and color; they explain values the element has without any rule of its own.",
+    "cssVariablesUsed resolves each var(--name) referenced by those rules to where it is defined.",
+    "To change this element in source code, search the repo for the strings in searchHints: text, classes and CSS selectors are the most reliable. Built stylesheet names are hashed (index-AbC123.css is usually index.css in source)."
+  ],
+  "click": {
+    "x": 970,
+    "y": 515,
+    "pageX": 970,
+    "pageY": 515
+  },
+  "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(3) > h2",
+  "treePath": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    0
+  ],
+  "element": {
+    "tag": "h2",
+    "id": null,
+    "classes": [],
+    "attrs": {},
+    "text": "Suggestions",
+    "innerText": "Suggestions",
+    "box": {
+      "x": 923,
+      "y": 499,
+      "w": 233,
+      "h": 26
+    },
+    "computedStyles": {
+      "color": "rgb(11, 110, 79)",
+      "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "font-size": "16.8px",
+      "font-weight": "700",
+      "font-style": "normal",
+      "line-height": "26.04px",
+      "letter-spacing": "normal",
+      "text-align": "start",
+      "text-transform": "none",
+      "visibility": "visible",
+      "cursor": "pointer",
+      "display": "block",
+      "position": "static",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "margin": "0px 0px 6.4px",
+      "padding": "0px",
+      "border-radius": "0px",
+      "box-shadow": "none",
+      "opacity": "1",
+      "text-decoration-line": "none",
+      "flex-direction": "row",
+      "justify-content": "normal",
+      "align-items": "normal",
+      "gap": "normal",
+      "grid-template-columns": "none",
+      "overflow": "visible",
+      "z-index": "auto"
+    },
+    "outerHTML": "<h2>Suggestions</h2>"
+  },
+  "ancestors": [
+    {
+      "tag": "html",
+      "id": null,
+      "classes": [],
+      "path": "html"
+    },
+    {
+      "tag": "body",
+      "id": null,
+      "classes": [],
+      "path": "html > body"
+    },
+    {
+      "tag": "div",
+      "id": "root",
+      "classes": [],
+      "path": "html > body > div#root"
+    },
+    {
+      "tag": "main",
+      "id": null,
+      "classes": [
+        "page"
+      ],
+      "path": "html > body > div#root > main.page"
+    },
+    {
+      "tag": "nav",
+      "id": null,
+      "classes": [
+        "link-cards"
+      ],
+      "path": "html > body > div#root > main.page > nav.link-cards"
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "card",
+        "link-card"
+      ],
+      "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(3)"
+    }
+  ],
+  "matchedCssRules": [
+    {
+      "selector": "*",
+      "declarations": "box-sizing: border-box;",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    },
+    {
+      "selector": "h2",
+      "declarations": "font-size: 1.25rem; margin: 0px 0px 1rem;",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    },
+    {
+      "selector": ".link-card h2",
+      "declarations": "margin: 0px 0px 0.4rem; font-size: 1.05rem; color: var(--accent);",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    }
+  ],
+  "inheritedCssRules": [
+    {
+      "ancestor": "html",
+      "selector": ":root",
+      "declarations": "font-family: ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif; line-height: 1.55",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    },
+    {
+      "ancestor": "html > body",
+      "selector": "body",
+      "declarations": "color: var(--fg)",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    },
+    {
+      "ancestor": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(3)",
+      "selector": "a",
+      "declarations": "color: var(--accent)",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    },
+    {
+      "ancestor": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(3)",
+      "selector": ".link-card",
+      "declarations": "color: inherit",
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "active": true
+    }
+  ],
+  "cssVariablesUsed": [
+    {
+      "name": "--accent",
+      "definitions": [
+        {
+          "value": "#0b6e4f",
+          "selector": ":root",
+          "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+          "active": true
+        },
+        {
+          "value": "#4fc79a",
+          "selector": ":root",
+          "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+          "conditions": [
+            "@media (prefers-color-scheme: dark)"
+          ],
+          "active": false
+        }
+      ]
+    },
+    {
+      "name": "--fg",
+      "definitions": [
+        {
+          "value": "#1c1c1a",
+          "selector": ":root",
+          "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+          "active": true
+        },
+        {
+          "value": "#ecebe6",
+          "selector": ":root",
+          "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+          "conditions": [
+            "@media (prefers-color-scheme: dark)"
+          ],
+          "active": false
+        }
+      ]
+    }
+  ],
+  "searchHints": {
+    "text": "Suggestions",
+    "id": null,
+    "classes": [],
+    "dataAttributes": {},
+    "cssSelectors": [
+      "*",
+      "h2",
+      ".link-card h2"
+    ],
+    "cssVariables": [
+      "--accent",
+      "--fg"
+    ],
+    "ancestorClasses": [
+      "page",
+      "link-cards",
+      "card",
+      "link-card"
+    ]
+  },
+  "fullExportFile": "dom-export-dev.peter-busche.com-2026-11-09T00-27-22-817Z.json",
+  "htmlFile": "dom-export-dev.peter-busche.com-2026-11-09T00-27-22-817Z.html"
+}

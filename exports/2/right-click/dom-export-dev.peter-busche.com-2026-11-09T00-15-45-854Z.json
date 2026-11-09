@@ -1,0 +1,1099 @@
+{
+  "formatVersion": 3,
+  "url": "https://dev.peter-busche.com/",
+  "title": "Peter Busche",
+  "capturedAt": "2026-11-09T00:15:45.842Z",
+  "viewport": {
+    "width": 1512,
+    "height": 743,
+    "devicePixelRatio": 2
+  },
+  "colorScheme": "light",
+  "kind": "page-export",
+  "howToRead": [
+    "tree is the full rendered element tree for this one URL, as nested nodes: tag, id, classes, attrs, text (the element's own text), styles, box (page position and size in px), children.",
+    "styles holds computed values, kept only where they add information: inherited properties (color, font-family, font-size, ...) appear only where they differ from the parent, so walk up the tree to find the value an element inherits; other properties appear only where they differ from the browser default for that tag. The <html> node lists every inherited property.",
+    "Computed values are resolved (var(--bg) shows as an rgb() color). Use cssVariables and stylesheets[].text to see the rules and variables as authored, including hover, dark-mode and breakpoint rules that were not active during capture.",
+    "If selection is present, the user right-clicked one element: it is the tree node with selected: true. selection.treePath lists the child indexes to follow from tree (the <html> node) through children[] to reach it, and selection.selectionFile names the companion file describing that element in detail.",
+    "This is the rendered output, not source code. Class names, text, ids and data attributes are the best strings to search for in the repo."
+  ],
+  "limitations": [
+    "Only the current URL in its current state is captured: other routes, logged-in views, open menus and modals need separate exports.",
+    "Computed styles reflect the colorScheme and viewport listed above only.",
+    "No JavaScript, event handlers, API calls or application state are captured.",
+    "Image and font files are referenced by URL, not embedded.",
+    "Iframe contents, closed shadow roots and styles inside shadow roots are not captured."
+  ],
+  "counts": {
+    "elements": 37,
+    "treeTruncated": false,
+    "interactiveElements": 12,
+    "images": 1,
+    "stylesheets": 1,
+    "stylesheetsUnreadable": 0
+  },
+  "selection": {
+    "path": "html > body > div#root > header.site-header > nav.nav > a:nth-of-type(2)",
+    "treePath": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "selectionFile": "dom-export-dev.peter-busche.com-2026-11-09T00-15-45-854Z.selection.json"
+  },
+  "fonts": [],
+  "cssVariables": [
+    {
+      "selector": ":root",
+      "variables": {
+        "--bg": "#fafaf7",
+        "--fg": "#1c1c1a",
+        "--muted": "#5f5f5a",
+        "--line": "#e4e4de",
+        "--accent": "#0b6e4f",
+        "--card": "#ffffff"
+      },
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css"
+    },
+    {
+      "selector": ":root",
+      "variables": {
+        "--bg": "#141412",
+        "--fg": "#ecebe6",
+        "--muted": "#a3a29b",
+        "--line": "#2b2b28",
+        "--accent": "#4fc79a",
+        "--card": "#1c1c1a"
+      },
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "conditions": [
+        "@media (prefers-color-scheme: dark)"
+      ]
+    },
+    {
+      "selector": ":root",
+      "variables": {
+        "--series-1": "#2a78d6",
+        "--viz-grid": "#e4e4de"
+      },
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css"
+    },
+    {
+      "selector": ":root",
+      "variables": {
+        "--series-1": "#3987e5",
+        "--viz-grid": "#2b2b28"
+      },
+      "stylesheet": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "conditions": [
+        "@media (prefers-color-scheme: dark)"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "path": "html > body > div#root > header.site-header > a.brand > img.brand-mark",
+      "kind": "img",
+      "src": "https://dev.peter-busche.com/assets/geometric-pattern-logo-BDBtaVuM.svg",
+      "alt": "",
+      "naturalWidth": 150,
+      "naturalHeight": 150,
+      "box": {
+        "x": 20,
+        "y": 4,
+        "w": 48,
+        "h": 48
+      }
+    }
+  ],
+  "interactiveElements": [
+    {
+      "path": "html > body > div#root > header.site-header > a.brand",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "brand"
+      ],
+      "text": "",
+      "ariaLabel": "Peter Busche — home",
+      "href": "/",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "700",
+        "padding": "0px",
+        "border-radius": "0px"
+      }
+    },
+    {
+      "path": "html > body > div#root > header.site-header > nav.nav > a.active:nth-of-type(1)",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "active"
+      ],
+      "text": "Home",
+      "ariaLabel": null,
+      "href": "/",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "4px 0px",
+        "border-radius": "0px",
+        "border-bottom": "2px solid rgb(11, 110, 79)"
+      }
+    },
+    {
+      "path": "html > body > div#root > header.site-header > nav.nav > a:nth-of-type(2)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "Projects",
+      "ariaLabel": null,
+      "href": "/projects",
+      "computedStyles": {
+        "color": "rgb(95, 95, 90)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "4px 0px",
+        "border-radius": "0px",
+        "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "path": "html > body > div#root > header.site-header > nav.nav > a:nth-of-type(3)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "Blog",
+      "ariaLabel": null,
+      "href": "/blog",
+      "computedStyles": {
+        "color": "rgb(95, 95, 90)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "4px 0px",
+        "border-radius": "0px",
+        "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "path": "html > body > div#root > header.site-header > nav.nav > a:nth-of-type(4)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "Suggestions",
+      "ariaLabel": null,
+      "href": "/suggestions",
+      "computedStyles": {
+        "color": "rgb(95, 95, 90)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "4px 0px",
+        "border-radius": "0px",
+        "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "path": "html > body > div#root > header.site-header > nav.nav > a:nth-of-type(5)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "Contact",
+      "ariaLabel": null,
+      "href": "/contact",
+      "computedStyles": {
+        "color": "rgb(95, 95, 90)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "4px 0px",
+        "border-radius": "0px",
+        "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(1)",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "card",
+        "link-card"
+      ],
+      "text": "Projects\n\nWhat I have built, with the source, and a live view of my GitHub activity.",
+      "ariaLabel": null,
+      "href": "/projects",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgb(255, 255, 255)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "20px",
+        "border-radius": "12px",
+        "border": "1px solid rgb(228, 228, 222)"
+      }
+    },
+    {
+      "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(2)",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "card",
+        "link-card"
+      ],
+      "text": "Daily log\n\nShort entries about what I worked on, drafted from each day’s commits.",
+      "ariaLabel": null,
+      "href": "/blog",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgb(255, 255, 255)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "20px",
+        "border-radius": "12px",
+        "border": "1px solid rgb(228, 228, 222)"
+      }
+    },
+    {
+      "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(3)",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "card",
+        "link-card"
+      ],
+      "text": "Suggestions\n\nSpotted a bug or want to see something here? Tell me.",
+      "ariaLabel": null,
+      "href": "/suggestions",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgb(255, 255, 255)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "20px",
+        "border-radius": "12px",
+        "border": "1px solid rgb(228, 228, 222)"
+      }
+    },
+    {
+      "path": "html > body > div#root > main.page > nav.link-cards > a.card.link-card:nth-of-type(4)",
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "card",
+        "link-card"
+      ],
+      "text": "Contact\n\nEmail and LinkedIn.",
+      "ariaLabel": null,
+      "href": "/contact",
+      "computedStyles": {
+        "color": "rgb(28, 28, 26)",
+        "background-color": "rgb(255, 255, 255)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "padding": "20px",
+        "border-radius": "12px",
+        "border": "1px solid rgb(228, 228, 222)"
+      }
+    },
+    {
+      "path": "html > body > div#root > footer.footer > nav.row > a:nth-of-type(1)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "GitHub",
+      "ariaLabel": null,
+      "href": "https://github.com/peter-busche",
+      "computedStyles": {
+        "color": "rgb(11, 110, 79)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "14.4px",
+        "font-weight": "400",
+        "padding": "0px",
+        "border-radius": "0px"
+      }
+    },
+    {
+      "path": "html > body > div#root > footer.footer > nav.row > a:nth-of-type(2)",
+      "tag": "a",
+      "id": null,
+      "classes": [],
+      "text": "This site’s source",
+      "ariaLabel": null,
+      "href": "https://github.com/peter-busche/serverless_website_1",
+      "computedStyles": {
+        "color": "rgb(11, 110, 79)",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "font-size": "14.4px",
+        "font-weight": "400",
+        "padding": "0px",
+        "border-radius": "0px"
+      }
+    }
+  ],
+  "tree": {
+    "tag": "html",
+    "attrs": {
+      "lang": "en"
+    },
+    "styles": {
+      "color": "rgb(0, 0, 0)",
+      "font-family": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "font-size": "16px",
+      "font-weight": "400",
+      "font-style": "normal",
+      "line-height": "24.8px",
+      "letter-spacing": "normal",
+      "text-align": "start",
+      "text-transform": "none",
+      "visibility": "visible",
+      "cursor": "auto"
+    },
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 1497,
+      "h": 936
+    },
+    "children": [
+      {
+        "tag": "body",
+        "styles": {
+          "color": "rgb(28, 28, 26)",
+          "background-color": "rgb(250, 250, 247)",
+          "margin": "0px"
+        },
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 1497,
+          "h": 936
+        },
+        "children": [
+          {
+            "tag": "div",
+            "id": "root",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "w": 1497,
+              "h": 936
+            },
+            "children": [
+              {
+                "tag": "header",
+                "classes": [
+                  "site-header"
+                ],
+                "styles": {
+                  "display": "flex",
+                  "position": "sticky",
+                  "background-color": "rgb(255, 255, 255)",
+                  "padding": "4px 20px",
+                  "justify-content": "space-between",
+                  "align-items": "center",
+                  "gap": "16px",
+                  "z-index": "10",
+                  "border-bottom": "1px solid rgb(228, 228, 222)"
+                },
+                "box": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1497,
+                  "h": 57
+                },
+                "children": [
+                  {
+                    "tag": "a",
+                    "classes": [
+                      "brand"
+                    ],
+                    "attrs": {
+                      "aria-label": "Peter Busche — home",
+                      "href": "/",
+                      "data-discover": "true"
+                    },
+                    "styles": {
+                      "font-weight": "700",
+                      "letter-spacing": "-0.16px",
+                      "cursor": "pointer",
+                      "display": "flex",
+                      "align-items": "center"
+                    },
+                    "box": {
+                      "x": 20,
+                      "y": 4,
+                      "w": 48,
+                      "h": 48
+                    },
+                    "children": [
+                      {
+                        "tag": "img",
+                        "classes": [
+                          "brand-mark"
+                        ],
+                        "attrs": {
+                          "alt": "",
+                          "width": "32",
+                          "height": "32",
+                          "src": "/assets/geometric-pattern-logo-BDBtaVuM.svg"
+                        },
+                        "styles": {
+                          "display": "block"
+                        },
+                        "box": {
+                          "x": 20,
+                          "y": 4,
+                          "w": 48,
+                          "h": 48
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "nav",
+                    "classes": [
+                      "nav"
+                    ],
+                    "attrs": {
+                      "aria-label": "Site"
+                    },
+                    "styles": {
+                      "display": "flex",
+                      "gap": "20px"
+                    },
+                    "box": {
+                      "x": 1115,
+                      "y": 11,
+                      "w": 362,
+                      "h": 35
+                    },
+                    "children": [
+                      {
+                        "tag": "a",
+                        "classes": [
+                          "active"
+                        ],
+                        "attrs": {
+                          "aria-current": "page",
+                          "href": "/",
+                          "data-discover": "true"
+                        },
+                        "text": "Home",
+                        "styles": {
+                          "cursor": "pointer",
+                          "display": "block",
+                          "padding": "4px 0px",
+                          "border-bottom": "2px solid rgb(11, 110, 79)"
+                        },
+                        "box": {
+                          "x": 1115,
+                          "y": 11,
+                          "w": 43,
+                          "h": 35
+                        }
+                      },
+                      {
+                        "tag": "a",
+                        "selected": true,
+                        "attrs": {
+                          "href": "/projects",
+                          "data-discover": "true"
+                        },
+                        "text": "Projects",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "padding": "4px 0px",
+                          "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+                        },
+                        "box": {
+                          "x": 1178,
+                          "y": 11,
+                          "w": 59,
+                          "h": 35
+                        }
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/blog",
+                          "data-discover": "true"
+                        },
+                        "text": "Blog",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "padding": "4px 0px",
+                          "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+                        },
+                        "box": {
+                          "x": 1257,
+                          "y": 11,
+                          "w": 33,
+                          "h": 35
+                        }
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/suggestions",
+                          "data-discover": "true"
+                        },
+                        "text": "Suggestions",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "padding": "4px 0px",
+                          "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+                        },
+                        "box": {
+                          "x": 1309,
+                          "y": 11,
+                          "w": 90,
+                          "h": 35
+                        }
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/contact",
+                          "data-discover": "true"
+                        },
+                        "text": "Contact",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "padding": "4px 0px",
+                          "border-bottom": "2px solid rgba(0, 0, 0, 0)"
+                        },
+                        "box": {
+                          "x": 1419,
+                          "y": 11,
+                          "w": 58,
+                          "h": 35
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "main",
+                "classes": [
+                  "page"
+                ],
+                "styles": {
+                  "margin": "0px 300.5px",
+                  "padding": "64px 20px 96px"
+                },
+                "box": {
+                  "x": 301,
+                  "y": 57,
+                  "w": 896,
+                  "h": 776
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "classes": [
+                      "hero"
+                    ],
+                    "styles": {
+                      "margin": "0px 0px 56px"
+                    },
+                    "box": {
+                      "x": 321,
+                      "y": 121,
+                      "w": 856,
+                      "h": 301
+                    },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "classes": [
+                          "eyebrow"
+                        ],
+                        "text": "Software engineer",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "font-size": "12.8px",
+                          "line-height": "19.84px",
+                          "letter-spacing": "1.024px",
+                          "text-transform": "uppercase",
+                          "margin": "0px"
+                        },
+                        "box": {
+                          "x": 321,
+                          "y": 121,
+                          "w": 856,
+                          "h": 20
+                        }
+                      },
+                      {
+                        "tag": "h1",
+                        "text": "Peter Busche",
+                        "styles": {
+                          "font-size": "48px",
+                          "font-weight": "700",
+                          "line-height": "74.4px",
+                          "letter-spacing": "-0.96px",
+                          "margin": "4px 0px 16px"
+                        },
+                        "box": {
+                          "x": 321,
+                          "y": 145,
+                          "w": 856,
+                          "h": 74
+                        }
+                      },
+                      {
+                        "tag": "p",
+                        "classes": [
+                          "lede"
+                        ],
+                        "text": "I build things on AWS and write about what I learn.",
+                        "styles": {
+                          "color": "rgb(95, 95, 90)",
+                          "font-size": "17.6px",
+                          "line-height": "27.28px",
+                          "margin": "17.6px 0px"
+                        },
+                        "box": {
+                          "x": 321,
+                          "y": 237,
+                          "w": 640,
+                          "h": 27
+                        }
+                      },
+                      {
+                        "tag": "p",
+                        "classes": [
+                          "bio"
+                        ],
+                        "text": "This site is one of the things I built: a serverless portfolio that deploys itself from a git push and costs a few dollars a month to run. Every part of it, from the CloudFront front door to the Dynam",
+                        "box": {
+                          "x": 321,
+                          "y": 282,
+                          "w": 704,
+                          "h": 74
+                        }
+                      },
+                      {
+                        "tag": "p",
+                        "classes": [
+                          "bio"
+                        ],
+                        "text": "I am open to backend, cloud, and platform work where I can own real systems end to end. I hope you enjoy my website!",
+                        "box": {
+                          "x": 321,
+                          "y": 372,
+                          "w": 704,
+                          "h": 50
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "nav",
+                    "classes": [
+                      "link-cards"
+                    ],
+                    "attrs": {
+                      "aria-label": "Sections"
+                    },
+                    "styles": {
+                      "display": "grid",
+                      "gap": "16px",
+                      "grid-template-columns": "274.664px 274.664px 274.664px"
+                    },
+                    "box": {
+                      "x": 321,
+                      "y": 478,
+                      "w": 856,
+                      "h": 259
+                    },
+                    "children": [
+                      {
+                        "tag": "a",
+                        "classes": [
+                          "card",
+                          "link-card"
+                        ],
+                        "attrs": {
+                          "href": "/projects",
+                          "data-discover": "true"
+                        },
+                        "styles": {
+                          "cursor": "pointer",
+                          "display": "block",
+                          "background-color": "rgb(255, 255, 255)",
+                          "padding": "20px",
+                          "border-radius": "12px",
+                          "border": "1px solid rgb(228, 228, 222)"
+                        },
+                        "box": {
+                          "x": 321,
+                          "y": 478,
+                          "w": 275,
+                          "h": 145
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "text": "Projects",
+                            "styles": {
+                              "color": "rgb(11, 110, 79)",
+                              "font-size": "16.8px",
+                              "font-weight": "700",
+                              "line-height": "26.04px",
+                              "margin": "0px 0px 6.4px"
+                            },
+                            "box": {
+                              "x": 342,
+                              "y": 499,
+                              "w": 233,
+                              "h": 26
+                            }
+                          },
+                          {
+                            "tag": "p",
+                            "text": "What I have built, with the source, and a live view of my GitHub activity.",
+                            "styles": {
+                              "color": "rgb(95, 95, 90)",
+                              "font-size": "15.2px",
+                              "line-height": "23.56px",
+                              "margin": "0px"
+                            },
+                            "box": {
+                              "x": 342,
+                              "y": 531,
+                              "w": 233,
+                              "h": 71
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "a",
+                        "classes": [
+                          "card",
+                          "link-card"
+                        ],
+                        "attrs": {
+                          "href": "/blog",
+                          "data-discover": "true"
+                        },
+                        "styles": {
+                          "cursor": "pointer",
+                          "display": "block",
+                          "background-color": "rgb(255, 255, 255)",
+                          "padding": "20px",
+                          "border-radius": "12px",
+                          "border": "1px solid rgb(228, 228, 222)"
+                        },
+                        "box": {
+                          "x": 611,
+                          "y": 478,
+                          "w": 275,
+                          "h": 145
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "text": "Daily log",
+                            "styles": {
+                              "color": "rgb(11, 110, 79)",
+                              "font-size": "16.8px",
+                              "font-weight": "700",
+                              "line-height": "26.04px",
+                              "margin": "0px 0px 6.4px"
+                            },
+                            "box": {
+                              "x": 632,
+                              "y": 499,
+                              "w": 233,
+                              "h": 26
+                            }
+                          },
+                          {
+                            "tag": "p",
+                            "text": "Short entries about what I worked on, drafted from each day’s commits.",
+                            "styles": {
+                              "color": "rgb(95, 95, 90)",
+                              "font-size": "15.2px",
+                              "line-height": "23.56px",
+                              "margin": "0px"
+                            },
+                            "box": {
+                              "x": 632,
+                              "y": 531,
+                              "w": 233,
+                              "h": 71
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "a",
+                        "classes": [
+                          "card",
+                          "link-card"
+                        ],
+                        "attrs": {
+                          "href": "/suggestions",
+                          "data-discover": "true"
+                        },
+                        "styles": {
+                          "cursor": "pointer",
+                          "display": "block",
+                          "background-color": "rgb(255, 255, 255)",
+                          "padding": "20px",
+                          "border-radius": "12px",
+                          "border": "1px solid rgb(228, 228, 222)"
+                        },
+                        "box": {
+                          "x": 902,
+                          "y": 478,
+                          "w": 275,
+                          "h": 145
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "text": "Suggestions",
+                            "styles": {
+                              "color": "rgb(11, 110, 79)",
+                              "font-size": "16.8px",
+                              "font-weight": "700",
+                              "line-height": "26.04px",
+                              "margin": "0px 0px 6.4px"
+                            },
+                            "box": {
+                              "x": 923,
+                              "y": 499,
+                              "w": 233,
+                              "h": 26
+                            }
+                          },
+                          {
+                            "tag": "p",
+                            "text": "Spotted a bug or want to see something here? Tell me.",
+                            "styles": {
+                              "color": "rgb(95, 95, 90)",
+                              "font-size": "15.2px",
+                              "line-height": "23.56px",
+                              "margin": "0px"
+                            },
+                            "box": {
+                              "x": 923,
+                              "y": 531,
+                              "w": 233,
+                              "h": 47
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "a",
+                        "classes": [
+                          "card",
+                          "link-card"
+                        ],
+                        "attrs": {
+                          "href": "/contact",
+                          "data-discover": "true"
+                        },
+                        "styles": {
+                          "cursor": "pointer",
+                          "display": "block",
+                          "background-color": "rgb(255, 255, 255)",
+                          "padding": "20px",
+                          "border-radius": "12px",
+                          "border": "1px solid rgb(228, 228, 222)"
+                        },
+                        "box": {
+                          "x": 321,
+                          "y": 639,
+                          "w": 275,
+                          "h": 98
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "text": "Contact",
+                            "styles": {
+                              "color": "rgb(11, 110, 79)",
+                              "font-size": "16.8px",
+                              "font-weight": "700",
+                              "line-height": "26.04px",
+                              "margin": "0px 0px 6.4px"
+                            },
+                            "box": {
+                              "x": 342,
+                              "y": 660,
+                              "w": 233,
+                              "h": 26
+                            }
+                          },
+                          {
+                            "tag": "p",
+                            "text": "Email and LinkedIn.",
+                            "styles": {
+                              "color": "rgb(95, 95, 90)",
+                              "font-size": "15.2px",
+                              "line-height": "23.56px",
+                              "margin": "0px"
+                            },
+                            "box": {
+                              "x": 342,
+                              "y": 692,
+                              "w": 233,
+                              "h": 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "footer",
+                "classes": [
+                  "footer"
+                ],
+                "styles": {
+                  "font-size": "14.4px",
+                  "line-height": "22.32px",
+                  "display": "flex",
+                  "margin": "0px 300.5px",
+                  "padding": "32px 20px 48px",
+                  "justify-content": "space-between",
+                  "gap": "16px",
+                  "border-top": "1px solid rgb(228, 228, 222)"
+                },
+                "box": {
+                  "x": 301,
+                  "y": 833,
+                  "w": 896,
+                  "h": 103
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "classes": [
+                      "muted"
+                    ],
+                    "text": "© 2026 Peter Busche",
+                    "styles": {
+                      "color": "rgb(95, 95, 90)",
+                      "display": "block"
+                    },
+                    "box": {
+                      "x": 321,
+                      "y": 866,
+                      "w": 143,
+                      "h": 22
+                    }
+                  },
+                  {
+                    "tag": "nav",
+                    "classes": [
+                      "row"
+                    ],
+                    "attrs": {
+                      "aria-label": "Elsewhere"
+                    },
+                    "styles": {
+                      "display": "flex",
+                      "align-items": "center",
+                      "gap": "16px"
+                    },
+                    "box": {
+                      "x": 999,
+                      "y": 866,
+                      "w": 177,
+                      "h": 22
+                    },
+                    "children": [
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "https://github.com/peter-busche"
+                        },
+                        "text": "GitHub",
+                        "styles": {
+                          "color": "rgb(11, 110, 79)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "text-decoration-line": "underline"
+                        },
+                        "box": {
+                          "x": 999,
+                          "y": 866,
+                          "w": 46,
+                          "h": 22
+                        }
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "https://github.com/peter-busche/serverless_website_1"
+                        },
+                        "text": "This site’s source",
+                        "styles": {
+                          "color": "rgb(11, 110, 79)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "text-decoration-line": "underline"
+                        },
+                        "box": {
+                          "x": 1062,
+                          "y": 866,
+                          "w": 115,
+                          "h": 22
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "stylesheets": [
+    {
+      "source": "https://dev.peter-busche.com/assets/index-CGk-Fgzo.css",
+      "readVia": "cssRules",
+      "text": ":root { color-scheme: light dark; --bg: #fafaf7; --fg: #1c1c1a; --muted: #5f5f5a; --line: #e4e4de; --accent: #0b6e4f; --card: #ffffff; font-family: ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif; line-height: 1.55; }\n@media (prefers-color-scheme: dark) {\n  :root { --bg: #141412; --fg: #ecebe6; --muted: #a3a29b; --line: #2b2b28; --accent: #4fc79a; --card: #1c1c1a; }\n}\n* { box-sizing: border-box; }\nbody { margin: 0px; background: var(--bg); color: var(--fg); }\na { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }\n.page { max-width: 56rem; margin: 0px auto; padding: 4rem 1.25rem 6rem; }\n.hero { margin-bottom: 3.5rem; }\n.eyebrow { margin: 0px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }\nh1 { margin: 0.25rem 0px 1rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; }\nh2 { font-size: 1.25rem; margin: 0px 0px 1rem; }\nh3 { margin: 0px 0px 0.5rem; font-size: 1.05rem; }\n.lede { max-width: 40rem; font-size: 1.1rem; color: var(--muted); }\n.links { display: flex; gap: 1rem; }\n.grid { list-style: none; padding: 0px; margin: 0px; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }\n.card { height: 100%; padding: 1.25rem; background: var(--card); border: 1px solid var(--line); border-radius: 0.75rem; }\n.card p { margin: 0px 0px 1rem; color: var(--muted); font-size: 0.95rem; }\n.repos { list-style: none; padding: 0px; margin: 0px 0px 0.9rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.9rem; }\n.tags { list-style: none; padding: 0px; margin: 0px; display: flex; flex-wrap: wrap; gap: 0.4rem; }\n.tags li { font-size: 0.75rem; padding: 0.15rem 0.55rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }\n.muted { color: var(--muted); }\n.banner { margin: 0px 0px 1.5rem; padding: 0.6rem 0.9rem; border-left: 3px solid var(--accent); background: var(--card); border-radius: 0.5rem; font-weight: 600; }\n.error { color: rgb(180, 35, 24); }\n.suggest { margin-top: 3.5rem; }\n.form { display: grid; gap: 0.9rem; max-width: 34rem; }\n.form label { display: grid; gap: 0.3rem; font-size: 0.9rem; }\n.form input, .form textarea { font: inherit; padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 0.5rem; background: var(--card); color: var(--fg); }\nbutton { font: inherit; padding: 0.55rem 1rem; border-radius: 0.5rem; border: 1px solid var(--accent); background: var(--accent); color: rgb(255, 255, 255); cursor: pointer; justify-self: start; }\nbutton:disabled { opacity: 0.6; cursor: default; }\nbutton.link { padding: 0px; border: 0px; background: none; color: var(--accent); text-decoration: underline; }\n.admin-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }\n.list { list-style: none; padding: 0px; margin: 1rem 0px 0px; display: grid; gap: 0.75rem; }\n.list li { padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 0.5rem; background: var(--card); }\n.list li p { margin: 0px 0px 0.25rem; }\nsection + section { margin-top: 2.5rem; }\n:root { --series-1: #2a78d6; --viz-grid: #e4e4de; }\n@media (prefers-color-scheme: dark) {\n  :root { --series-1: #3987e5; --viz-grid: #2b2b28; }\n}\n.viz { margin: 1.25rem 0px 0px; }\n.viz-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }\n.viz-plot { position: relative; }\n.viz-plot svg { display: block; width: 100%; height: auto; }\n.viz-bar { fill: var(--series-1); }\n.viz-bar.is-hover { fill-opacity: 0.75; }\n.viz-grid { stroke: var(--viz-grid); stroke-width: 1; }\n.viz-tick { fill: var(--muted); font-size: 11px; }\n.viz-tooltip { position: absolute; top: 0px; transform: translate(-50%); padding: 0.3rem 0.6rem; background: var(--card); border: 1px solid var(--line); border-radius: 0.4rem; font-size: 0.85rem; white-space: nowrap; pointer-events: none; }\n.viz-table { margin-top: 0.5rem; font-size: 0.85rem; }\n.viz-table summary { cursor: pointer; color: var(--muted); }\n.viz-table table { border-collapse: collapse; margin-top: 0.5rem; }\n.viz-table th, .viz-table td { text-align: right; padding: 0.2rem 0.75rem 0.2rem 0px; border-bottom: 1px solid var(--line); }\n.viz-table th:first-child, .viz-table td:first-child { text-align: left; }\n.tiles { list-style: none; padding: 0px; margin: 1rem 0px 0px; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }\n.tile { padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 0.5rem; background: var(--card); display: grid; gap: 0.15rem; }\n.tile-label { font-size: 0.8rem; color: var(--muted); }\n.tile-value { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }\n.small { font-size: 0.9rem; }\n.project-header { margin-bottom: 2rem; }\n.project-header .repos { margin-bottom: 0.75rem; }\n.markdown { line-height: 1.6; }\n.markdown pre { overflow-x: auto; padding: 0.75rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem; }\n.markdown code { font-size: 0.9em; }\n.markdown img { max-width: 100%; }\n.markdown table { border-collapse: collapse; }\n.markdown th, .markdown td { border: 1px solid var(--line); padding: 0.3rem 0.6rem; }\n.markdown h1 { font-size: 1.6rem; }\n.markdown h2 { font-size: 1.25rem; margin-top: 2rem; }\n.posts { list-style: none; padding: 0px; margin: 1rem 0px 0px; display: grid; gap: 1.25rem; }\n.posts h3 { margin: 0.1rem 0px 0.35rem; font-size: 1.1rem; }\n.posts p { margin: 0px; }\n.badge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.1rem 0.45rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; }\n.badge.published { border-color: var(--accent); color: var(--accent); }\n.row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }\n.check { display: flex; gap: 0.5rem; align-items: center; }\n.editor { margin: 1.5rem 0px; padding: 1rem; border: 1px solid var(--line); border-radius: 0.5rem; background: var(--card); max-width: none; }\n.editor textarea, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; }\n.site-header { position: sticky; top: 0px; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.25rem 1.25rem; background: var(--card); border-bottom: 1px solid var(--line); }\n.brand { display: inline-flex; align-items: center; font-weight: 700; letter-spacing: -0.01em; color: var(--fg); text-decoration: none; }\n.brand-mark { display: block; height: 3rem; width: auto; }\n.nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }\n.nav a { color: var(--muted); text-decoration: none; padding: 0.25rem 0px; border-bottom: 2px solid transparent; }\n.nav a:hover { color: var(--fg); }\n.nav a.active { color: var(--fg); border-bottom-color: var(--accent); }\n.audience-banner { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0.5rem 1.25rem; background: color-mix(in srgb,var(--accent) 12%,var(--bg)); border-bottom: 1px solid var(--line); font-weight: 600; }\n.audience-banner button { font-size: 1.1rem; line-height: 1; text-decoration: none; }\n.footer { max-width: 56rem; margin: 0px auto; padding: 2rem 1.25rem 3rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--line); font-size: 0.9rem; }\n.audience-note { margin: 0px 0px 2.5rem; padding: 1rem 1.25rem; border-left: 3px solid var(--accent); background: var(--card); border-radius: 0.5rem; max-width: 44rem; }\n.audience-note p { margin: 0px 0px 0.75rem; }\n.audience-note p:last-child { margin-bottom: 0px; }\n.bio { max-width: 44rem; }\n.link-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }\n.link-card { display: block; text-decoration: none; color: inherit; }\n.link-card h2 { margin: 0px 0px 0.4rem; font-size: 1.05rem; color: var(--accent); }\n.link-card p { margin: 0px; color: var(--muted); font-size: 0.95rem; }\n.link-card:hover { border-color: var(--accent); }\n.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; }\n.card h3 .badge { margin-left: 0.5rem; }\n.contact li p:last-child { margin: 0px; font-size: 1.05rem; }"
+    }
+  ]
+}
